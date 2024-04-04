@@ -1,0 +1,39 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model List<crude_operation.Models.Employee>
+
+<div class="container">
+    <div class="row">
+        <table class="table">
+            <tr>
+                <th>UserId</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>Department</th>
+                <th>Email</th>
+                <th>Salary</th>
+                <th>Created Date</th>
+            </tr>
+            @{
+                foreach (var emp in Model)
+                {
+                    <tr>
+                        <td>@emp.UserId</td>
+                        <td>@emp.Name</td>
+                        <td>@emp.Address</td>
+                        <td>@emp.City</td>
+                        <td>@emp.Department</td>
+                        <td>@emp.Salary</td>
+                        <td>@emp.Email</td>
+                        <td>@emp.CreatedDate</td>
+                        <td><a class="btn btn-danger" href="A_Delete/@emp.UserId">Delete</a> <a class="btn btn-danger" href="A_Edit/@emp.UserId">Edit</a></td>
+                    </tr>
+                }
+            }
+        </table>
+    </div>
+</div>
